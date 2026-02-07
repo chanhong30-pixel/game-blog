@@ -3,9 +3,11 @@ import os
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[1]
-INDEX = BASE / "index.html"
-POSTS = BASE / "posts"
-POSTS.mkdir(exist_ok=True)
+PUBLIC = BASE / "public"
+PUBLIC.mkdir(exist_ok=True)
+INDEX = PUBLIC / "index.html"
+POSTS = PUBLIC / "posts"
+POSTS.mkdir(parents=True, exist_ok=True)
 
 TOPICS = [
     ("示例文章 1", "Example Article 1", "example-1"),
